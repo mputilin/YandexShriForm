@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Анкета ШРИ</title>
+	<link href="css/ui-lightness/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
+	<script>
+	$(function() {
+		
+		$( "#accordion" ).accordion();
+        $( "#accordion1" ).accordion();
+
+
+
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+		$( "#autocomplete" ).autocomplete({
+			source: availableTags
+		});
+
+
+
+		$( "#button" ).button();
+		$( "#radioset" ).buttonset();
+
+
+
+		$( "#tabs" ).tabs();
+
+
+
+		$( "#dialog" ).dialog({
+			autoOpen: false,
+			width: 400,
+			buttons: [
+				{
+					text: "Ok",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				},
+				{
+					text: "Cancel",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+
+		// Link to open the dialog
+		$( "#dialog-link" ).click(function( event ) {
+			$( "#dialog" ).dialog( "open" );
+			event.preventDefault();
+		});
+
+
+
+		$( "#datepicker" ).datepicker({
+			inline: true
+		});
+
+
+
+		$( "#slider" ).slider({
+			range: true,
+			values: [ 17, 67 ]
+		});
+
+
+
+		$( "#progressbar" ).progressbar({
+			value: 20
+		});
+
+
+		// Hover states on the static widgets
+		$( "#dialog-link, #icons li" ).hover(
+			function() {
+				$( this ).addClass( "ui-state-hover" );
+			},
+			function() {
+				$( this ).removeClass( "ui-state-hover" );
+			}
+		);
+	});
+	</script>
+	<style>
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	</style>
+</head>
+<body>
+
+<h1>Анкета Школы разработки интерфейсов в Симферополе</h1>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Общие вопросы</a></li>
+        <li><a href="#tabs-2">Опыт разработки</a></li>
+    </ul>
+    <div id="tabs-1">
+
+        <div id="accordion">
+            <h3>Фамилия, имя, отчество</h3>
+            <div>Путилин Максим Николаевич</div>
+            <h3>Год рождения</h3>
+            <div>1985</div>
+            <h3>Город, в котором живёте</h3>
+            <div>Симферополь</div>
+            <h3>Вуз, факультет, специальность, кафедра</h3>
+            <div>ТНУ, физический факультет, компьютерные сети и системы. Закончил с отличием.</div>
+            <h3>Год окончания вуза</h3>
+            <div>2007</div>
+            <h3>Уровень владения английским языком</h3>
+            <div>Intermediate. Защищал диплом на английском - есть соответствующий сертификат переводчика по специальности. Продолжил обучение в Softwarium.</div>
+            <h3>Чего вы ожидаете от участия в Школе?</h3>
+            <div>Получить представление о полном цикле разработки интерфейса веб-приложений. Научиться пользоваться основными инструментами. Выбрать путь для дальнейшего обучения. </div>
+            <h3>Откуда вы о нас узнали?</h3>
+            <div>Социальные сети</div>
+            <h3>Сколько времени вы готовы уделять стажировке или работе в Яндексе?</h3>
+            <div>Готов устроиться на постоянную работу</div>
+        </div>
+
+
+    </div>
+
+    <div id="tabs-2">
+
+        <div id="accordion1">
+            <h3>Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный интерфейс, так и просто домашняя страничка.</h3>
+            <div>В старших классах делал пару страничек для школьного сайта (HTML). В университете писал программы на Delfi - интерфейс windows приложений. На бумаге перерисовывал дизайн существующего iOS приложения. Ничего серьезного.</div>
+            <h3>Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас личные предпочтения?</h3>
+            <div>BashScript, PowerShell, ObjectPascal, HTML, JS, CSS, jQuery, jQueryUI</div>
+            <h3>С какими ОС приходилось сталкиваться? Для каких целей вы их применяли?</h3>
+            <div>Из актуальных - Windows (десктопные и серверные), Lunix (RHEL и CentOS, Ubuntu, Debian... (десктопные и серверные), iOS (на iPhone и iPad), MacOS X.</div>
+            <h3>Приходилось ли вам работать с системами контроля версий? С какими? Какая из них вам нравится больше всего?</h3>
+            <div>SVN, немного CVS и GIT. Работал мало, поэтому фаворита нет.</div>
+            <h3>Использовали ли вы системы постановки и ведения задач?</h3>
+            <div>Mantis, Jira</div>
+            <h3>Какие полезные для фронтенд-разработчика ресурсы вы используете и готовы посоветовать?</h3>
+            <div>Habrahabr. Меня интересует юзабилити и дизайн, не фронтэнд разработка.</div>
+            <h3>Где вы работали раньше? Что именно делали? Есть ли у вас опыт работы в команде?</h3>
+            <div>Системный администратор в Softwarium. Администрирую локальные сервера и сервера заказчиков. В команде разрабатывали (выбирали программные решения, настраивали, писали скрипты) для отказоустойчивого кластера для Spinscape.com.</div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
