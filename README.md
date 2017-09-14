@@ -1,1 +1,1 @@
-Анкета для Школы разработки интерфейсов
+Once I wanted to study UI/UX. Still love good interfaces.
